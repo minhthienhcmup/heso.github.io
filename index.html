@@ -26,6 +26,30 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+  <script type="text/javascript">
+    function sendEmail() {
+      var email = document.getElementById("email");
+      var name = document.getElementById("name");
+      var subject = document.getElementById("subject");
+      var message = document.getElementById("Message");
+
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "dungmori359@gmail.com",
+        Password: "eocarznowfsjnpwt",
+        To: "minhthienhcmup@gmail.com",
+        From: "dungmori359@gmail.com",
+        Subject: subject + " | " + name + " | " + email,
+        Body: message,
+      })
+        .then(function (message) {
+          alert("Email sent successfully.")
+        });
+    }
+  </script>
+
 </head>
 
 <body>
@@ -230,35 +254,53 @@
     <section id="services" class="services section-bg">
       <div class="container">
 
-        <div class="section-title">
+        <div id="service_content" class="section-title">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-cash-stack" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title">System Development</h4>
+              <p class="description">
+                <li style="margin-left: 30px;">Web system development</li>
+                <li style="margin-left: 30px;">ERP system</li>
+                <li style="margin-left: 30px;">System upgrade</li>
+                <li style="margin-left: 30px;">Business support system</li>
+                <li style="margin-left: 30px;">SAP development</li>
+                <li style="margin-left: 30px;">E-Commerce</li>
+                <li style="margin-left: 30px;">ServiceNow</li>
+              </p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-calendar4-week" style="color: #e9bf06;"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <h4 class="title">Application development</h4>
+              <p class="description">
+                <li style="margin-left: 30px;">Native Apps (Android/IOS)</li>
+                <li style="margin-left: 30px;">Business support application</li>
+                <li style="margin-left: 30px;">Chat application</li>
+                <li style="margin-left: 30px;">AI-integrated applications</li>
+                
+              </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-chat-text" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <h4 class="title">Application customization</h4>
+              <p class="description">
+                <li style="margin-left: 30px;">Custom web application</li>
+                <li style="margin-left: 30px;">Custom mobile application</li>
+                <li style="margin-left: 30px;">Custom desktop application</li>
+              </p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
+          <!-- <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-credit-card-2-front" style="color:#41cf2e;"></i></div>
               <h4 class="title"><a href="">Magni Dolores</a></h4>
@@ -280,7 +322,7 @@
               <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Services Section -->
@@ -521,23 +563,18 @@
     <section id="team" class="team section-bg">
       <div class="container">
 
-        <div class="section-title">
-          <h2>Meet Our Team</h2>
-          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        <div class="section-title1">
+          <h2>Why Choose Us</h2>
+          <p>With a team of years of experience working remotely with clients from many countries such as Japan, Australia, Singapore, Taiwan, etc. We understand that communication is the key to project success. HESO has created a standard communication process between the customer and the development team, ensuring that both sides clearly understand the requirements and progress of the project. More than 90% of employees can communicate in English, Japanese,...</p>
+          <p>HESO always strives with the goal, bringing satisfaction to customers with quality software products, integrating optimal and cost-effective technology solutions.</p>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
 
           <div class="col-lg-3 col-md-5 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
                 <img src="assets/img/team/team-11.jpg" class="img-fluid" alt="">
-                <!-- <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div> -->
               </div>
               <div class="member-info">
                 <h4>Hung, Vo Duy Anh</h4>
@@ -550,12 +587,6 @@
             <div class="member">
               <div class="member-img">
                 <img src="assets/img/team/team-21.jpg" class="img-fluid" alt="">
-                <!-- <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div> -->
               </div>
               <div class="member-info">
                 <h4>Thien, Truong Minh</h4>
@@ -568,12 +599,6 @@
             <div class="member">
               <div class="member-img">
                 <img src="assets/img/team/team-31.jpg" class="img-fluid" alt="">
-                <!-- <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div> -->
               </div>
               <div class="member-info">
                 <h4>Luan, Nguyen Hoang</h4>
@@ -586,12 +611,6 @@
             <div class="member">
               <div class="member-img">
                 <img src="assets/img/team/team-41.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <!-- <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a> -->
-                </div>
               </div>
               <div class="member-info">
                 <h4>Dang, Nguyen Minh</h4>
@@ -600,9 +619,23 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
+    </section><!-- End Team Section -->
+
+    <section id="tech" class="team section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Technology Stack</h2>
+                <p>Java, ReactJS, NodeJS, Angular, .NET Core, PHP, AWS, Azure, GCP, iOS, Android and other technologies are among our specialties.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div style="text-align: center;">
+                <img src="assets/img/tech_stack.png"
+            </div>
+        </div>
     </section><!-- End Team Section -->
 
     <!-- ======= Gallery Section ======= -->
@@ -728,7 +761,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <!-- <form class="php-email-form"> -->
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -743,13 +776,14 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
+              <!-- <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+              </div> -->
+              <br />
+              <div class="text-center"><button class="buttonSendmail" onclick="sendEmail();">Send Message</button></div>
+            <!-- </form> -->
 
           </div>
 
@@ -807,11 +841,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#service_content">System Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#service_content">Application development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#service_content">Application customization</a></li>
             </ul>
           </div>
 
