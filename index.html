@@ -30,10 +30,15 @@
   
   <script type="text/javascript">
     function sendEmail() {
-      var email = document.getElementById("email");
-      var name = document.getElementById("name");
-      var subject = document.getElementById("subject");
-      var message = document.getElementById("Message");
+      var email = document.getElementById("email").value;
+      var name = document.getElementById("name").value;
+      var subject = document.getElementById("subject").value;
+      var message = document.getElementById("message").value;
+      console.log(message);
+      if (email.trim() === '' || name.trim() === '' || subject.trim() === '' || message.trim() === '') {
+          alert("Please input all items in this contact form!");
+          return;
+      }
 
       Email.send({
         Host: "smtp.gmail.com",
@@ -774,7 +779,7 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" id="message" rows="5" placeholder="Message" required></textarea>
               </div>
               <!-- <div class="my-3">
                 <div class="loading">Loading</div>
